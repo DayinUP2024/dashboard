@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Piktag Mission Control",
-  description: "Unified Dashboard for Piktag Feature Tracking and Collaboration",
+  title: "DayinUP | 智慧指揮中心",
+  description: "DayinUP Command Center - 統一追蹤所有產品開發進度與反饋",
 };
 
 export default function RootLayout({
