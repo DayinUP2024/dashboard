@@ -41,11 +41,19 @@ export async function POST(req: NextRequest) {
 
             console.log(`Received push to ${repoName} (${branch})`);
 
-            // 1. Map repo name to product_id
+            // 1. Map repo name to product_id (Using UUIDs from DB)
             let productId = '';
-            if (repoName.toLowerCase().includes('dating-up')) productId = 'dating-up';
-            else if (repoName.toLowerCase().includes('dayinup-up')) productId = 'dayinup';
-            else if (repoName.toLowerCase().includes('dashboard')) productId = 'dashboard';
+
+            // Normalize repo name
+            const normalizedName = repoName.toLowerCase();
+
+            if (normalizedName.includes('dating-up')) {
+                productId = '13ce4743-1678-4504-8b83-a9d948281358'; // Dating UP
+            } else if (normalizedName.includes('dayinup-up')) {
+                productId = 'a92ba463-bd18-4c8d-8a14-4363294025ad'; // DayinUPUP
+            } else if (normalizedName.includes('dashboard')) {
+                productId = '5ab49635-4303-469b-8f3a-79659357640a'; // DayinUP Dashboard
+            }
 
             if (!productId) {
                 console.log(`No product mapping for repo: ${repoName}`);
