@@ -1,0 +1,12 @@
+{
+    "name": "web",
+    "active": true,
+    "events": [
+        "push"
+    ],
+    "config": {
+        "url": "https://dayinup-dashboard-two.vercel.app/api/webhooks/github",
+        "content_type": "json",
+        "secret": "dayinup-secret"
+    }
+}
